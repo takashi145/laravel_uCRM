@@ -7,6 +7,9 @@ use App\Http\Controllers\PurchaseController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\AnalysisController;
+
+Route::get('analysis', [AnalysisController::class, 'index'])->name('analysis');
 
 Route::resource('items', ItemController::class)
 ->middleware(['auth', 'verified']);
