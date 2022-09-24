@@ -15,7 +15,7 @@ class DecileService
 
     // 会員毎にまとめて購入金額順にソートする
     $subQuery = DB::table($subQuery)
-    ->groupBy('customer_id', 'customer_name')
+    ->groupBy('customer_id', 'customer_name') 
     ->selectRaw('customer_id, customer_name, 
     sum(totalPerPurchase) as total')
     ->orderBy('total', 'desc');
